@@ -1,5 +1,5 @@
-import csv
-import sqlite3
+
+import csv, sqlite3
 
 
 def main():
@@ -14,3 +14,4 @@ def main():
 
     print('please enter your k: ')
     k = input()
+main()
