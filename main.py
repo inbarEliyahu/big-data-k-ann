@@ -79,13 +79,22 @@ def main():
             height=0
             for j in range(int((tupSize/2)-1)):
                 height=height+curr[(j+1)*2]
-            print(dict)
             rootsAndHeights.update({curr[0]:height})
-        sortedRootsAndHeights={}
-        keysOfSorted=sorted(rootsAndHeights, key=rootsAndHeights.get)
-        for w in keysOfSorted:
-            sortedRootsAndHeights[w]=rootsAndHeights[w]
-        print(sortedRootsAndHeights)
+        SortedByHeightRoots=sorted(rootsAndHeights, key=rootsAndHeights.get)
+        print(SortedByHeightRoots)
+        for curr in SortedByHeightRoots:
+            q.put(curr)
+        markedNodes=[]
+        while not q.empty():
+            node=q.get()
+            marked=False
+            if node in markedNodes:
+                marked=True
+            if not marked:
+                if node in SortedByHeightRoots:
+                    #compute frequency set
+
+
 
 
 
