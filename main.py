@@ -81,7 +81,6 @@ def main():
                 height=height+curr[(j+1)*2]
             rootsAndHeights.update({curr[0]:height})
         SortedByHeightRoots=sorted(rootsAndHeights, key=rootsAndHeights.get)
-        print(SortedByHeightRoots)
         for curr in SortedByHeightRoots:
             q.put(curr)
         markedNodes=[]
@@ -92,7 +91,12 @@ def main():
                 marked=True
             if not marked:
                 if node in SortedByHeightRoots:
-                    #compute frequency set
+                    nodeStr= str(node)
+                    print("nodeStr:")
+                    print(nodeStr)
+                    cur.execute("SELECT * FROM C1 WHERE ID=?", [nodeStr])
+                    print("node:")
+                    print(cur.fetchone())
 
 
 
