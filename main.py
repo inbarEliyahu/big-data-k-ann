@@ -148,12 +148,13 @@ def main():
                     SortedByHeightNodes = sorted(nodesAndHeights, key=nodesAndHeights.get)
                     for curr in SortedByHeightNodes:
                         q.put(curr)
-        forCreationNodeTable="C"+str(i+2)+"(ID INTEGER PRIMARY KEY AUTOINCREMENT,dim1,index1"#for the sql query in line 156
+        cur.execute("CREATE TABLE S"+str(i+1)+"q AS SELECT * FROM S"+str(i+1))
+        cur.execute("SELECT * FROM S1q")
+        forCreationNodeTable="C"+str(i+2)+"(ID INTEGER PRIMARY KEY AUTOINCREMENT,dim1,index1,"#for the sql query in line 156
         for j in range(i+1):
-            forCreationNodeTable=forCreationNodeTable+","+"dim"+str(j+2)+","+"index"+str(j+2)
-        forCreationNodeTable=forCreationNodeTable+")"
-        print(forCreationNodeTable)
-        cur.execute("CREATE TABLE %s" %forCreationNodeTable)#creating the next nodes table
+            forCreationNodeTable=forCreationNodeTable+"dim"+str(j+2)+","+"index"+str(j+2)+","
+        print("CREATE TABLE %s" %forCreationNodeTable+"parent1,parent2)")
+        cur.execute("CREATE TABLE %s" %forCreationNodeTable+"parent1,parent2)")#creating the next nodes table
 
 
 
