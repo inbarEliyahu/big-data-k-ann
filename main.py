@@ -193,9 +193,8 @@ def main():
                         print(firstGen+" with generalization number "+str(nodeTuple[2]))
                         print(secondtGen+" with generalization number "+str(nodeTuple[4]))
                         print(thirdGen+" with generalization number "+str(nodeTuple[6]))
-                        print(firstGen+" with generalization number "+str(nodeTuple[8]))
-
-                        return nodeTuple
+                        print(fourthdGen+" with generalization number "+str(nodeTuple[8]))
+                        return
                     for currGen in directGenID:
                         markedNodes.append(currGen[0])
                 else:#if node doesn`t satisfies k annonimity
@@ -209,6 +208,22 @@ def main():
                         nodesAndHeights.update({curr[0]: height})
 
                     print("nodesAndHeights after entering direct gens")
+                    print(nodesAndHeights)
+
+                    while len(q)>0:
+                        currID=q.pop(0)
+                        cur.execute("SELECT * FROM C"+str(i+1)+" WHERE ID="+str(currID))
+                        current=cur.fetchone()
+                        print("lets see current")
+                        print(current)
+                        height = 0
+                        for j in range(int(numNodeColumnsWithoutParents)):
+                            if j != 0:
+                                if (j % 2) == 0:
+                                    height = height + current[j]  # height is the sum of the indexes in the nodes table
+                        nodesAndHeights.update({current[0]: height})
+
+                    print("nodesAndHeights after entering roots left")
                     print(nodesAndHeights)
 
                     SortedByHeightNodes = sorted(nodesAndHeights, key=nodesAndHeights.get)
