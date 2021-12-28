@@ -1,0 +1,17 @@
+Married-spouse-absent,Own-child,Black,Male
+Married-civ-spouse,Husband,White,Male
+Divorced,Husband,White,Male
+Married-civ-spouse,Husband,Black,Male
+Never-married,Own-child,White,Female
+Married-AF-spouse,Not-in-family,White,Male
+Never-married,Unmarried,Black,Male
+Married-civ-spouse,Husband,White,Male
+Never-married,Unmarried,White,Female
+Married-civ-spouse,Husband,White,Male
+Divorced,Not-in-family,Amer-Indian-Eskimo,Female
+Married-AF-spouse,Not-in-family,Other,Male
+Married-spouse-absent,Other-relative,Other,Male
+Separated,Other-relative,Amer-Indian-Eskimo,Female
+Widowed,Unmarried,Asian-Pac-Islander,Female
+Separated,Wife,Other,Male
+Widowed,Wife,Asian-Pac-Islander,Female
