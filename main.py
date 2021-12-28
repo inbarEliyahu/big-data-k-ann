@@ -238,16 +238,16 @@ def main():
         newNodesTable="C"+str(i+2)+" (ID INTEGER PRIMARY KEY AUTOINCREMENT,dim1,index1,"#for the sql query
         insert_into="C"+str(i+2)+" (dim1,index1,"
         selectQueryInNode="SELECT "
+        whereQueryInNode = "WHERE "
         for j in range(i+1):
             insert_into =insert_into+"dim"+str(j+2)+","+"index"+str(j+2)+","
             newNodesTable=newNodesTable+"dim"+str(j+2)+","+"index"+str(j+2)+","
             selectQueryInNode=selectQueryInNode+"p.dim"+str(j+1)+",p.index"+str(j+1)+","
+            if j!=i:
+                whereQueryInNode=whereQueryInNode+"p.dim"+str(j+1)+"=q.dim"+str(j+1)+" AND p.index"+str(j+1)+"=q.index"+str(j+1)+" AND "
         newNodesTable=newNodesTable+"parent1,parent2)"
         insert_into=insert_into+"parent1,parent2)"
         selectQueryInNode=selectQueryInNode+"q.dim"+str(i+1)+",q.index"+str(i+1)+",p.ID,q.ID "
-        whereQueryInNode="WHERE "
-        for j in range(i):
-            whereQueryInNode=whereQueryInNode+"p.dim"+str(j+1)+"=q.dim"+str(j+1)+" AND p.index"+str(j+1)+"=q.index"+str(j+1)+" AND "
         whereQueryInNode=whereQueryInNode+"p.dim"+str(i+1)+"<q.dim"+str(i+1)
 
         print("new node query")
